@@ -92,7 +92,7 @@ class AppRatingDialogFragment : DialogFragment() {
 
     private fun setupRatingBar() {
         dialogView.setNumberOfStars(data.numberOfStars)
-
+        dialogView.setIsStarsVisible(data.isVisible)
         val isEmpty = data.noteDescriptions?.isEmpty() ?: true
         if (!isEmpty) {
             dialogView.setNoteDescriptions(data.noteDescriptions!!)

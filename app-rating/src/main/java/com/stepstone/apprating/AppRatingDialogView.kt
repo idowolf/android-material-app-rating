@@ -249,4 +249,8 @@ class AppRatingDialogView(context: Context) : LinearLayout(context), OnRatingBar
         context.theme.resolveAttribute(attr, outValue, true)
         return outValue.data
     }
+
+    fun setIsStarsVisible(visible: Boolean) {
+        ratingBar.setIsStarsVisible(visible)
+    }
 }

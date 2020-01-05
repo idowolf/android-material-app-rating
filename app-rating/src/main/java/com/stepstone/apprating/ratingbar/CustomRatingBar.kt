@@ -63,7 +63,7 @@ class CustomRatingBar(context: Context, attrs: AttributeSet) : LinearLayout(cont
             addStar()
                     .setCheckedWithoutAnimation(index < numberOfChecked)
                     .setColor(getStarColor(context))
-                    .setOnClickListener(OnStarClickedHandler(index + 1))
+//                    .setOnClickListener(OnStarClickedHandler(index + 1))
         }
     }
 
@@ -121,6 +121,10 @@ class CustomRatingBar(context: Context, attrs: AttributeSet) : LinearLayout(cont
         val outValue = TypedValue()
         context.theme.resolveAttribute(colorAttr, outValue, true)
         return outValue.data
+    }
+
+    fun setIsStarsVisible(visible: Boolean) {
+        ratingBarContainer.visibility = if (visible) View.VISIBLE else View.GONE
     }
 
     private inner class OnStarClickedHandler(private val number: Int) : View.OnClickListener {

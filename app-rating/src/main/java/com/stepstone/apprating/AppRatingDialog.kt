@@ -94,7 +94,8 @@ class AppRatingDialog private constructor(
             var windowAnimationResId: Int = 0,
             var noteDescriptions: ArrayList<String>? = null,
             var cancelable: Boolean? = null,
-            var canceledOnTouchOutside: Boolean? = null
+            var canceledOnTouchOutside: Boolean? = null,
+            var isVisible: Boolean = false
         ) : Serializable
 
         val data = Data()
@@ -160,6 +161,11 @@ class AppRatingDialog private constructor(
                 "default rating value should be between 0 and " + data.numberOfStars
             )
             data.defaultRating = defaultRating
+            return this
+        }
+
+        fun setStarsVisible(isVisible: Boolean): Builder {
+            data.isVisible = isVisible
             return this
         }
 
